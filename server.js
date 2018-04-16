@@ -47,11 +47,17 @@ app.get('/about', (req, res) => { //localhost:3000/about
     }); //to render to our view or hbs we have now
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Project',
+    });
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Unable to handle request'
     })
-})
+});
 
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
